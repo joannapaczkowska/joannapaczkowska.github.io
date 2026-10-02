@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joanna Paczkowska | Marine Ecology & Data Analysis</title>
+  <meta name="description" content="Joanna Paczkowska — marine ecology, environmental monitoring and oceanographic data analysis.">
+  <title>Joanna Paczkowska | Marine Ecology &amp; Data Analysis</title>
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -19,7 +25,8 @@
       padding: 60px 24px;
     }
 
-    main, .intro {
+    main,
+    .intro {
       max-width: 900px;
       margin: auto;
     }
@@ -28,9 +35,19 @@
       padding: 30px 24px;
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
+
     nav a {
       color: white;
-      margin-right: 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     section {
@@ -38,6 +55,7 @@
       padding: 28px;
       margin-bottom: 24px;
       border-radius: 12px;
+      scroll-margin-top: 20px;
     }
 
     h1 {
@@ -50,11 +68,79 @@
 
     a {
       color: #126580;
+      overflow-wrap: anywhere;
+    }
+
+    details {
+      margin: 14px 0;
+      padding: 16px;
+      background: #f3f7f8;
+      border: 1px solid #dce7eb;
+      border-radius: 8px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #123e50;
+    }
+
+    summary:focus-visible,
+    a:focus-visible {
+      outline: 3px solid #e5a53b;
+      outline-offset: 4px;
+    }
+
+    code {
+      background: #e5eef2;
+      padding: 2px 5px;
+      border-radius: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    pre {
+      padding: 16px;
+      background: #e5eef2;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    pre code {
+      padding: 0;
+      overflow-wrap: normal;
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     footer {
       text-align: center;
       padding: 24px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 40px 20px;
+      }
+
+      main {
+        padding: 20px 12px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
   </style>
 </head>
@@ -63,12 +149,17 @@
   <header>
     <div class="intro">
       <h1>Dr. Joanna Paczkowska</h1>
-      <p>Marine Ecology · Environmental Monitoring · Data Analysis</p>
 
-      <nav>
+      <p>
+        Marine Ecology · Environmental Monitoring ·
+        Oceanographic Data Analysis
+      </p>
+
+      <nav aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="#website-guide" lang="pl">Instrukcja</a>
       </nav>
     </div>
   </header>
@@ -91,6 +182,7 @@
 
     <section id="projects">
       <h2>Projects</h2>
+
       <h3>Baltic Sea Environmental Data Exploration</h3>
 
       <p>
@@ -100,13 +192,14 @@
       </p>
 
       <p>
-        <strong>Data:</strong> a synthetic training dataset inspired
-        by Baltic Sea monitoring, not actual B15 or BY5 observations.
+        <strong>Data:</strong>
+        A synthetic training dataset inspired by Baltic Sea monitoring,
+        not actual B15 or BY5 observations.
       </p>
 
       <p>
-        <strong>Tools:</strong> Python, Pandas, NumPy,
-        Matplotlib and Jupyter Notebook.
+        <strong>Tools:</strong>
+        Python, Pandas, NumPy, Matplotlib and Jupyter Notebook.
       </p>
 
       <p>
@@ -116,9 +209,392 @@
 
     <section id="contact">
       <h2>Contact</h2>
+
       <p>
         <a href="https://github.com/joannapaczkowska">
           View my GitHub profile
+        </a>
+      </p>
+    </section>
+
+    <section id="website-guide" lang="pl">
+      <h2>Jak stworzyć i aktualizować tę stronę</h2>
+
+      <p>
+        Instrukcja krok po kroku: tworzenie strony na GitHub Pages
+        oraz zmienianie tekstów, dodawanie projektów, plików i wykresów.
+        Kliknij wybrany temat, aby rozwinąć instrukcję.
+      </p>
+
+      <details>
+        <summary>1. Utworzenie repozytorium</summary>
+
+        <p>
+          Repozytorium to miejsce przechowywania plików strony.
+          Dla tej strony zostało już utworzone.
+        </p>
+
+        <ol>
+          <li>
+            Zaloguj się na
+            <a href="https://github.com">github.com</a>.
+          </li>
+          <li>
+            Otwórz
+            <a href="https://github.com/new">
+              formularz nowego repozytorium
+            </a>.
+          </li>
+          <li>
+            W polu „Repository name” wpisz
+            <code>joannapaczkowska.github.io</code>.
+          </li>
+          <li>Wybierz „Public”.</li>
+          <li>Włącz „Add README”.</li>
+          <li>Kliknij „Create repository”.</li>
+        </ol>
+
+        <p>
+          <a href="https://github.com/joannapaczkowska/joannapaczkowska.github.io">
+            Otwórz repozytorium tej strony
+          </a>
+        </p>
+      </details>
+
+      <details>
+        <summary>2. Dodanie strony głównej</summary>
+
+        <ol>
+          <li>Otwórz repozytorium i zakładkę „Code”.</li>
+          <li>Kliknij „Add file → Create new file”.</li>
+          <li>
+            W polu „Name your file…” wpisz
+            <code>index.html</code>.
+          </li>
+          <li>Wklej cały kod HTML do dużego pola poniżej.</li>
+          <li>Kliknij „Commit changes…”.</li>
+          <li>
+            Wybierz „Commit directly to the main branch”
+            i potwierdź „Commit changes”.
+          </li>
+        </ol>
+
+        <p>
+          Plik <code>index.html</code> zawiera treść i wygląd strony.
+          Jeśli już istnieje, otwórz go i edytuj.
+        </p>
+      </details>
+
+      <details>
+        <summary>3. Włączenie publikowania strony</summary>
+
+        <ol>
+          <li>
+            Otwórz
+            <a href="https://github.com/joannapaczkowska/joannapaczkowska.github.io/settings/pages">
+              Settings → Pages
+            </a>.
+          </li>
+          <li>Znajdź „Build and deployment”.</li>
+          <li>
+            W „Source” wybierz „Deploy from a branch”.
+          </li>
+          <li>W „Branch” wybierz „main”.</li>
+          <li>Obok wybierz „/ (root)”.</li>
+          <li>Kliknij „Save”.</li>
+          <li>
+            Poczekaj na publikację.
+            Może potrwać około 10 minut.
+          </li>
+        </ol>
+
+        <p>
+          Adres strony:
+          <a href="https://joannapaczkowska.github.io">
+            joannapaczkowska.github.io
+          </a>
+        </p>
+      </details>
+
+      <details>
+        <summary>4. Jak zmienić tekst „About me”</summary>
+
+        <ol>
+          <li>
+            Otwórz
+            <a href="https://github.com/joannapaczkowska/joannapaczkowska.github.io">
+              repozytorium
+            </a>.
+          </li>
+          <li>Kliknij <code>index.html</code>.</li>
+          <li>
+            Kliknij ikonę ołówka — „Edit this file”.
+          </li>
+          <li>
+            Naciśnij Ctrl + F i wyszukaj:
+            <code>&lt;section id="about"&gt;</code>.
+          </li>
+          <li>
+            W tej sekcji zmień tekst pomiędzy
+            <code>&lt;p&gt;</code> i <code>&lt;/p&gt;</code>.
+            Zachowaj znaczniki.
+          </li>
+          <li>
+            Kliknij „Commit changes…”, a następnie
+            potwierdź „Commit changes”.
+          </li>
+          <li>
+            Poczekaj na aktualizację i odśwież stronę
+            przez Ctrl + F5.
+          </li>
+        </ol>
+
+        <p>Przykład akapitu:</p>
+
+        <pre><code>&lt;p&gt;
+  I am a marine ecologist specialising in phytoplankton
+  ecology and marine environmental monitoring.
+&lt;/p&gt;</code></pre>
+      </details>
+
+      <details>
+        <summary>5. Zmiana nazwiska, nagłówków i opisu projektu</summary>
+
+        <p>
+          Otwórz <code>index.html</code> i kliknij ołówek.
+          Następnie znajdź odpowiedni fragment:
+        </p>
+
+        <ul>
+          <li>
+            Nazwisko na górze strony:
+            <code>&lt;h1&gt;Dr. Joanna Paczkowska&lt;/h1&gt;</code>.
+          </li>
+          <li>
+            Opis pod nazwiskiem:
+            „Marine Ecology · Environmental Monitoring ·
+            Oceanographic Data Analysis”.
+          </li>
+          <li>
+            Tytuł karty przeglądarki:
+            tekst pomiędzy <code>&lt;title&gt;</code>
+            i <code>&lt;/title&gt;</code>.
+          </li>
+          <li>
+            Opis projektu:
+            sekcja <code>&lt;section id="projects"&gt;</code>.
+          </li>
+          <li>
+            Kontakt:
+            sekcja <code>&lt;section id="contact"&gt;</code>.
+          </li>
+        </ul>
+
+        <p>
+          Zmieniaj tekst, zachowując otaczające go znaczniki HTML.
+          Zapisz przez „Commit changes”.
+        </p>
+      </details>
+
+      <details>
+        <summary>6. Jak dodać adres e-mail</summary>
+
+        <ol>
+          <li>Otwórz <code>index.html</code> i kliknij ołówek.</li>
+          <li>
+            Znajdź <code>&lt;section id="contact"&gt;</code>.
+          </li>
+          <li>
+            Przed zamykającym tę sekcję znacznikiem
+            <code>&lt;/section&gt;</code>
+            dodaj poniższy fragment.
+          </li>
+          <li>
+            Zastąp oba wystąpienia „TWOJ_EMAIL” swoim adresem.
+          </li>
+          <li>Zapisz przez „Commit changes”.</li>
+        </ol>
+
+        <pre><code>&lt;p&gt;
+  Email:
+  &lt;a href="mailto:TWOJ_EMAIL"&gt;TWOJ_EMAIL&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+
+        <p>
+          Adres wpisany w tej sekcji będzie widoczny publicznie.
+        </p>
+      </details>
+
+      <details>
+        <summary>7. Jak dodać notebook, CV lub PDF</summary>
+
+        <ol>
+          <li>Zapisz plik na komputerze.</li>
+          <li>Otwórz repozytorium i zakładkę „Code”.</li>
+          <li>Kliknij „Add file → Upload files”.</li>
+          <li>Przeciągnij plik do pola przesyłania.</li>
+          <li>Kliknij „Commit changes”.</li>
+          <li>
+            Otwórz przesłany plik na GitHubie
+            i skopiuj adres z paska przeglądarki.
+          </li>
+          <li>Otwórz <code>index.html</code> i kliknij ołówek.</li>
+          <li>
+            W odpowiedniej sekcji dodaj poniższy link.
+            Zastąp „ADRES_PLIKU” skopiowanym adresem.
+          </li>
+          <li>Zapisz przez „Commit changes”.</li>
+        </ol>
+
+        <pre><code>&lt;p&gt;
+  &lt;a href="ADRES_PLIKU"&gt;View the Python notebook&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+
+        <p>
+          Dla CV zmień tekst linku na „View my CV”.
+          Dla raportu użyj „View the report”.
+        </p>
+      </details>
+
+      <details>
+        <summary>8. Jak dodać wykres lub zdjęcie</summary>
+
+        <ol>
+          <li>
+            Nadaj plikowi prostą nazwę, np.
+            <code>temperature_profile.png</code>.
+          </li>
+          <li>
+            W repozytorium kliknij „Add file → Upload files”.
+          </li>
+          <li>Prześlij obraz i kliknij „Commit changes”.</li>
+          <li>Otwórz <code>index.html</code> i kliknij ołówek.</li>
+          <li>
+            W sekcji projektu dodaj poniższy kod.
+          </li>
+          <li>Zapisz przez „Commit changes”.</li>
+        </ol>
+
+        <pre><code>&lt;img
+  src="temperature_profile.png"
+  alt="Temperature profiles — synthetic training data"
+  style="max-width: 100%; height: auto;"
+&gt;</code></pre>
+
+        <p>
+          Nazwa w „src” musi być identyczna z nazwą pliku,
+          również pod względem wielkości liter.
+          Ten przykład zakłada, że obraz jest w tym samym
+          folderze co <code>index.html</code>.
+        </p>
+
+        <p>
+          „alt” to krótki opis obrazu, używany między innymi
+          przez czytniki ekranu.
+        </p>
+      </details>
+
+      <details>
+        <summary>9. Jak dodać kolejny projekt</summary>
+
+        <ol>
+          <li>Otwórz <code>index.html</code> i kliknij ołówek.</li>
+          <li>
+            Znajdź <code>&lt;section id="projects"&gt;</code>.
+          </li>
+          <li>
+            Przed zamykającym tę sekcję
+            <code>&lt;/section&gt;</code>
+            wklej poniższy fragment.
+          </li>
+          <li>
+            Zmień tytuł, opis i listę narzędzi.
+          </li>
+          <li>Zapisz przez „Commit changes”.</li>
+        </ol>
+
+        <pre><code>&lt;h3&gt;Lake Environmental Monitoring&lt;/h3&gt;
+
+&lt;p&gt;
+  An educational analysis of lake water-quality data.
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;strong&gt;Tools:&lt;/strong&gt; Python, Pandas and Matplotlib.
+&lt;/p&gt;</code></pre>
+
+        <p>
+          Przy każdym projekcie podaj, czy dane są rzeczywiste,
+          czy syntetyczne, oraz skąd pochodzą.
+        </p>
+      </details>
+
+      <details>
+        <summary>10. Jak zmienić kolory</summary>
+
+        <p>
+          Otwórz <code>index.html</code> i kliknij ołówek.
+          Na początku pliku znajdziesz część
+          <code>&lt;style&gt;</code>.
+        </p>
+
+        <ul>
+          <li>
+            Kolor górnego pasa:
+            w bloku <code>header</code>
+            zmień <code>background: #123e50;</code>.
+          </li>
+          <li>
+            Kolor tła:
+            w bloku <code>body</code>
+            zmień <code>background: #f3f7f8;</code>.
+          </li>
+          <li>
+            Kolor głównego tekstu:
+            w bloku <code>body</code>
+            zmień <code>color: #20343d;</code>.
+          </li>
+        </ul>
+
+        <p>
+          Zachowaj dwukropek i średnik.
+          Zapisz zmiany przez „Commit changes”.
+        </p>
+      </details>
+
+      <details>
+        <summary>11. Co zrobić, jeśli zmiany się nie pojawiają</summary>
+
+        <ol>
+          <li>
+            Sprawdź, czy potwierdzono „Commit changes”.
+          </li>
+          <li>
+            Poczekaj kilka minut na publikację nowej wersji.
+          </li>
+          <li>Odśwież stronę przez Ctrl + F5.</li>
+          <li>
+            Jeśli nadal widzisz starą wersję,
+            sprawdź zakładkę „Actions” w repozytorium.
+            Ostatnie zadanie publikacji powinno zakończyć się powodzeniem.
+          </li>
+          <li>
+            Jeśli obraz się nie wyświetla,
+            sprawdź jego nazwę i ścieżkę w „src”.
+          </li>
+        </ol>
+      </details>
+
+      <p>
+        <strong>Schemat aktualizacji:</strong>
+        repozytorium → index.html → ołówek →
+        zmiana treści → Commit changes →
+        odświeżenie strony.
+      </p>
+
+      <p>
+        <a href="https://docs.github.com/en/pages">
+          Oficjalna dokumentacja GitHub Pages
         </a>
       </p>
     </section>
